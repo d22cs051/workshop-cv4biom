@@ -32,7 +32,7 @@ const accepted_presentations = [
   ['Stanley Lewis', 'https://www.linkedin.com/in/stanlew7531', 'assets/images/ppt-talks/Stanley-Lewis.jpg', 'PhD Student', 'University of Michigan Robotics Department', 'Object See, Robot Do: Language & Object Conditioned Affordance Wayfield Based Manipulation', 'Spotlight'],
   ['Zhenyu Jiang', 'https://zhenyujiang.me/', 'assets/images/ppt-talks/Zhenyu-Jiang.jpg', 'PhD Student', 'The University of Texas at Austin', 'Doduo: Dense Visual Correspondence from Unsupervised Semantic-Aware Flow', 'Spotlight'],
   ['Kushal Kedia', 'https://kushal2000.github.io/', 'assets/images/ppt-talks/Kushal-Kedia.png', 'PhD Student', 'Cornell University', 'Interactive Modeling of Human-Intent for Collaborative Manipulation', 'Spotlight'],
-  ['Ankit Goyal', 'https://imankgoyal.github.io/', 'assets/images/ppt-talks/Ankit-Goyal.png', 'Other', '', 'RVT: Robotic View Transformer for 3D Object Manipulation', 'Spotlight'],
+  ['Ankit Goyal', 'https://imankgoyal.github.io/', 'assets/images/ppt-talks/Ankit-Goyal.png', 'Research Scientist', 'NVIDIA', 'RVT: Robotic View Transformer for 3D Object Manipulation', 'Spotlight'],
   ['Leon Kim', 'https://www.grasp.upenn.edu/people/leon-kim/', 'assets/images/ppt-talks/Leon-Kim.jpg', 'PhD Student', 'University of Pennsylvania', 'Vision-Based Contact Localization Without Touch or Force Sensing', 'Spotlight'],
   ['Shangjie Xue', '#', 'https://bulma.io/images/placeholders/128x128.png', 'PhD Student', 'Georgia Institute of Technology', 'Neural Field Dynamics Model for Granular Object Piles Manipulation', , ''], // poster, hence ''
   // ["FullName-1", "#", "", "Designation", "Affiliation", "Presentation Title", "Spotlight"],
@@ -49,7 +49,7 @@ const schedule = [
   ['intro', '08:45 - 09:00', 'Introduction'],
   ['inv-talk', '09:00 - 09:30', 'Invited Talk'],
   ['inv-talk', '09:30 - 10:30', 'Spotlight Presentations'],
-  ['coffee-break', '10:30 - 11:30', '<span class="bold has-text-danger">Spotlight Posters</span> & Coffee Break'],
+  ['coffee-break', '10:30 - 11:30', '<span class="bold has-text-danger">Spotlight Posters (Muse 1)</span> & Coffee Break'],
   ['inv-talk', '11:30 - 12:00', 'Invited Talk'],
   ['spot-poster', '12:00 - 12:30', 'Invited Talk'],
   ['lunch-break', '12:30 - 13:30', 'Lunch Break'],
