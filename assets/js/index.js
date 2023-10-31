@@ -49,8 +49,8 @@ function populate_accepted_presentations(html_id, details){
   for(var i=0; i<details.length; i++) {
     curr_detail = details[i]
     spotlight_tag_html = ``
-    if(curr_detail[6] == "Spotlight"){
-      spotlight_tag_html = `<span class="tag is-warning">${curr_detail[6]}</span>`
+    if(curr_detail[7] == "Spotlight"){
+      spotlight_tag_html = `<span class="tag is-warning">${curr_detail[7]}</span>`
     }
     content_html += `
     <article class="media">
@@ -66,13 +66,24 @@ function populate_accepted_presentations(html_id, details){
             <br>
             ${curr_detail[3]}, ${curr_detail[4]}
             <br>
-            <small class='bold has-text-dark'><i class='fa fa-clock icon'  style="position: relative;top: 5px;"></i>&nbsp;${curr_detail[7]} | ${curr_detail[5]}</small>
+            <small class='bold has-text-dark'><i class='fa fa-clock icon'  style="position: relative;top: 5px;"></i>&nbsp;${curr_detail[8]} | <span class='toggle-btn has-text-primary'>${curr_detail[5]}</span>
+            <span class="hidden-content unbold"><br><span class='bold'>Abstract.</span> ${curr_detail[6]}</span>
+            </small>
           </p>
         </div>
       </div>
     </article>`
   }
   $(`#${html_id}`).html(content_html)
+}
+
+
+function animate_hidden_content(hidden_content){
+  if (hidden_content.is(':visible')) {
+    hidden_content.fadeOut();  // If visible, fade out
+  } else {
+    hidden_content.fadeIn();   // If hidden, fade in
+  }
 }
 
 $(document).ready(function () {
@@ -86,10 +97,11 @@ $(document).ready(function () {
   ${conference_details[2]}</p>
   </a>`)
   $('#workshop-date').html(workshop_date)
-  
+
   // talk content
-  populate_people_html('talk-content1', talk_speaker_details.slice(0, 3))
-  populate_people_html('talk-content2', talk_speaker_details.slice(3, ))
+  talk_content = Object.values(talk_speaker_details)
+  populate_people_html('talk-content1', talk_content.slice(0, 3))
+  populate_people_html('talk-content2', talk_content.slice(3, ))
 
   // organizers content
   populate_people_html('organizer-content-1', organizers_details.slice(0, 3))
@@ -118,7 +130,24 @@ $(document).ready(function () {
 
   schedule.forEach(schedule_entry => {
     let icon_html = ``
-    let effect = `` 
+    let effect = ``
+    let speaker_details = ``
+    let title_abstract_html = ``
+    let hidden_row_html = ``
+    let title = ``
+    let abstract = ``
+    let talk_mode = ``
+    let align_left = ``
+
+    if (schedule_entry[0] == 'inv-talk'){
+      speaker_details = talk_speaker_details[schedule_entry[3]]
+      talk_mode = schedule_entry[4] == 'online' ? '[Online]' : ''
+      align_left = (speaker_details[5] != `` && speaker_details[6] != ``) ? "align-left" : ""
+      title = speaker_details[5] != `` ? `<h5 class="center">${speaker_details[5]}</h5>` : `<span class="center">Coming Soon...</span>`
+      abstract = speaker_details[6] != `` ? `<p><span class="bold">Abstract.</span> ${speaker_details[6]}</p>` : `<br><span class="center">Thanks for your patience.</span>`
+      title_abstract_html = ` ${talk_mode}: ${speaker_details[0]} (<span class='toggle-btn has-text-success'>Details</span>)`
+      hidden_row_html = `<tr class="hidden-content ${align_left}"><td colspan="2">${title}${abstract}</td></tr>`
+    }
     if(['lunch-break', 'coffee-break'].includes(schedule_entry[0])){
       if (schedule_entry[0] == 'lunch-break'){
         icon_html = `<i class="fas fa-utensils icon" style="position: relative;top: 5px; margin-left:5px"></i>`
@@ -130,8 +159,9 @@ $(document).ready(function () {
     }
     schedule_html += `
       <tr class="${effect}">
-        <td>${schedule_entry[1]}</td><td>${schedule_entry[2]}${icon_html}</td>
-      </tr>`
+        <td>${schedule_entry[1]}</td><td>${schedule_entry[2]}${icon_html} ${title_abstract_html}</td>
+      </tr>
+      ${hidden_row_html}`
   });
   $('#schedule-table-body').html(schedule_html)
 
@@ -154,6 +184,14 @@ $(document).ready(function () {
       </div>
     </div>
   </footer>`)
+
+  $('.toggle-btn').on('click', function() {
+    var hidden_tr_content = $(this).closest('tr').next('.hidden-content');
+    var hidden_span_content = $(this).closest('span').next('.hidden-content');
+
+    animate_hidden_content(hidden_tr_content)
+    animate_hidden_content(hidden_span_content)
+  });
 
   // Last updated
   var apiUrl = "https://api.github.com/repos/NeuRL-RMW/NeuRL-RMW.github.io/commits?sha=main&per_page=1";
