@@ -89,7 +89,7 @@ function animate_hidden_content(hidden_content){
 $(document).ready(function () {
   $('#meta-desc').attr('content', `Web home for ${project_name} @ ${conference_details[0]}`);
   $('#title').html(project_name);
-  $('#project-name').html(`${proj_small_caps}${project_name}`)
+  $('#project-name').html(`${proj_small_caps}${project_name} @${conference_details[0].split(' ').join('')}`)
   $('#conference-details').html(`
   <a href="${conference_details[1]}" target="_blank">
   <img src="${conference_details[3]}" width="300px" height="300px">
@@ -141,10 +141,10 @@ $(document).ready(function () {
 
     if (schedule_entry[0] == 'inv-talk'){
       speaker_details = talk_speaker_details[schedule_entry[3]]
-      talk_mode = schedule_entry[4] == 'online' ? '[Online]' : ''
+      talk_mode = schedule_entry[4] == 'online' ? `<span class='has-text-danger bold'>[Online]</span>` : ``
       align_left = (speaker_details[5] != `` && speaker_details[6] != ``) ? "align-left" : ""
-      title = speaker_details[5] != `` ? `<h5 class="center">${speaker_details[5]}</h5>` : `<span class="center">Coming Soon...</span>`
-      abstract = speaker_details[6] != `` ? `<p><span class="bold">Abstract.</span> ${speaker_details[6]}</p>` : `<br><span class="center">Thanks for your patience.</span>`
+      title = speaker_details[5] != `` ? `<h5 class="center has-text-success bold">${speaker_details[5]}</h5>` : ``
+      abstract = speaker_details[6] != `` ? `<p><span class="bold">Abstract.</span> ${speaker_details[6]}</p>` : `<p class="center">Details coming soon. Thanks for your patience.</p>`
       title_abstract_html = ` ${talk_mode}: ${speaker_details[0]} (<span class='toggle-btn has-text-success'>Details</span>)`
       hidden_row_html = `<tr class="hidden-content ${align_left}"><td colspan="2">${title}${abstract}</td></tr>`
     }
