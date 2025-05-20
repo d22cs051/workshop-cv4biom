@@ -13,8 +13,8 @@ const workshop_date = `October 19-20, 2025`
 //   'cj': ['Chad Jenkins', './assets/images/talks/chad_jenkins.jpg', 'Professor', 'University of Michigan', 'https://robotics.umich.edu/profile/chad-jenkins', 'Nonparametric Belief Propagation: Differentiable, Diagnosable, and Decisive', ''],
 // }
 const talk_speaker_details = {
-  'mv': ['Mayank Vasta', 'assets/images/organizers/mvatsa.jpeg', 'Professor', 'IIT Jodhpur, India', 'mvatsa@iitj.ac.in'],
-  'rs': ['Richa Singh', 'assets/images/organizers/richa.jpeg', 'Professor', 'IIT Jodhpur, India', 'richa@iitj.ac.in'],
+  // 'mv': ['Mayank Vasta', 'assets/images/organizers/mvatsa.jpeg', 'Professor', 'IIT Jodhpur, India', 'mvatsa@iitj.ac.in'],
+  // 'rs': ['Richa Singh', 'assets/images/organizers/richa.jpeg', 'Professor', 'IIT Jodhpur, India', 'richa@iitj.ac.in'],
 }
 
 const organizers_details = [
