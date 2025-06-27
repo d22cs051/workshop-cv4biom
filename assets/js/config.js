@@ -1,5 +1,5 @@
 const project_name = `Workshop on Biometrics`
-const proj_small_caps = `<span class="small-caps">CV4biom</span>: `
+const proj_small_caps = `<span class="small-caps">CV4BIOM</span>: `
 const conference_details = ['ICCV 2025', 'https://iccv.thecvf.com/', 'Honolulu, Hawaii', 'assets/images/affiliation-logos/iccv_honolulu.jpg']
 const workshop_date = `October 19-20, 2025`
 
