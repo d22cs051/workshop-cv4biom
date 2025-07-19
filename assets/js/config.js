@@ -20,6 +20,12 @@ const talk_speaker_details = {
   // 'rs': ['Richa Singh', 'assets/images/organizers/richa.jpeg', 'Professor', 'IIT Jodhpur, India', 'richa@iitj.ac.in'],
 }
 
+const keynote_speaker_details = {
+  'ak': ['Ajay Kumar', 'assets/images/keynotes/ajay_kumar.png', 'Associate Head (Research) and Professor', 'Hong Kong Polytechnic University', 'https://www.polyu.edu.hk/dsai/people/academic-staff/kumarajay/?sc_lang=en'],
+  // 'mv': ['Mayank Vasta', 'assets/images/organizers/mvatsa.jpeg', 'Professor', 'IIT Jodhpur, India', 'mvatsa@iitj.ac.in'],
+  // 'rs': ['Richa Singh', 'assets/images/organizers/richa.jpeg', 'Professor', 'IIT Jodhpur, India', 'richa@iitj.ac.in'],
+}
+
 const organizers_details = [
   // ['Karthik Desingh', 'assets/images/organizers/karthik_desingh.jpeg', 'Assistant Professor', 'University of Minnesota, Twin Cities', 'https://karthikdesingh.com'],
   // ['Karthik Desingh', 'assets/images/organizers/karthik_desingh.jpeg', 'Assistant Professor', 'University of Minnesota, Twin Cities', 'https://karthikdesingh.com'],
