@@ -17,6 +17,8 @@ const talk_speaker_details = {
   'lpm': ['Louis-Philippe Morency', 'assets/images/talks/louis_morency.jpg', 'Associate Professor', 'School of Computer Science, Carnegie Mellon University', 'https://www.cs.cmu.edu/~morency/'],
   'laj': ['László A. Jeni', 'assets/images/talks/Laszlo_AJ.jpg', 'Assistant Professor', 'Robotics Institute of Carnegie Mellon University', 'https://www.laszlojeni.com/'],
   'ak': ['Ajay Kumar', 'assets/images/keynotes/ajay_kumar.png', 'Associate Head (Research) and Professor', 'Hong Kong Polytechnic University', 'https://www.polyu.edu.hk/dsai/people/academic-staff/kumarajay/?sc_lang=en'],
+  'ac': ['Amit K. Roy-Chowdhury', 'assets/images/talks/amit_roy_ch.png', 'Professor', 'UC Riverside AI Research', 'https://vcg.ece.ucr.edu/amit'],
+  'th': ['Tal Hassner', 'assets/images/talks/tal.jpg', 'Co-founder and CTO', 'WEIR AI', 'https://talhassner.github.io/home/'],
   // 'mv': ['Mayank Vasta', 'assets/images/organizers/mvatsa.jpeg', 'Professor', 'IIT Jodhpur, India', 'mvatsa@iitj.ac.in'],
   // 'rs': ['Richa Singh', 'assets/images/organizers/richa.jpeg', 'Professor', 'IIT Jodhpur, India', 'richa@iitj.ac.in'],
 }
